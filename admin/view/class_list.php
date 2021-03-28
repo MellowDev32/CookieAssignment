@@ -11,11 +11,11 @@
                 </tr>
                 <?php foreach ($classes as $class) : ?>
                 <tr>
-                    <td><?php echo $class['Class']; ?></td>
+                    <td><?php echo $class['className']; ?></td>
                     <td>
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_class">
-                            <input type="hidden" name="class_id" value="<?php echo $class['ID']; ?>" />
+                            <input type="hidden" name="class_id" value="<?php echo $class['classID']; ?>" />
                             <input type="submit" value="Remove" class="button red button-slim" />
                         </form>
                     </td>

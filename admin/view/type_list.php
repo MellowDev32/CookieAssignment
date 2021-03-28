@@ -11,11 +11,11 @@
                 </tr>
                 <?php foreach ($types as $type) : ?>
                 <tr>
-                    <td><?= $type['Type']; ?></td>
+                    <td><?= $type['typeName']; ?></td>
                     <td>
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_type">
-                            <input type="hidden" name="type_id" value="<?= $type['ID']; ?>" />
+                            <input type="hidden" name="type_id" value="<?= $type['typeID']; ?>" />
                             <input type="submit" value="Remove" class="button red button-slim" />
                         </form>
                     </td>

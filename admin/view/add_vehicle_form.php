@@ -7,8 +7,8 @@
         <label>Make:</label>
         <select name="make_id">
             <?php foreach ($makes as $make) : ?>
-            <option value="<?= $make['ID']; ?>">
-                <?= $make['Make']; ?>
+            <option value="<?= $make['makeID']; ?>">
+                <?= $make['makeName']; ?>
             </option>
             <?php endforeach; ?>
         </select>
@@ -16,8 +16,8 @@
         <label>Type:</label>
         <select name="type_id">
             <?php foreach ($types as $type) : ?>
-            <option value="<?= $type['ID']; ?>">
-                <?= $type['Type']; ?>
+            <option value="<?= $type['typeID']; ?>">
+                <?= $type['typeName']; ?>
             </option>
             <?php endforeach; ?>
         </select>
@@ -25,8 +25,8 @@
         <label>Class:</label>
         <select name="class_id">
             <?php foreach ($classes as $class) : ?>
-            <option value="<?= $class['ID']; ?>">
-                <?= $class['Class']; ?>
+            <option value="<?= $class['classID']; ?>">
+                <?= $class['className']; ?>
             </option>
             <?php endforeach; ?>
         </select>

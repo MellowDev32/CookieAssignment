@@ -7,12 +7,12 @@
             $orderby = 'V.price';
         }
         
-        $query = 'SELECT V.ID, V.year, M.Make, V.model, V.price, T.Type, C.Class 
+        $query = 'SELECT V.vehcileID, V.year, M.makeName, V.model, V.price, T.typeName, C.className 
         FROM vehicles V 
-        LEFT JOIN makes M ON V.make_id = M.ID 
-        LEFT JOIN classes C ON V.class_id = C.ID 
-        LEFT JOIN types T ON V.type_id = T.ID 
-        WHERE V.class_id = :class_id 
+        LEFT JOIN makes M ON V.makeID = M.makeID 
+        LEFT JOIN classes C ON V.classID = C.classID 
+        LEFT JOIN types T ON V.typeID = T.typeID 
+        WHERE V.classID = :class_id 
         ORDER BY ' . $orderby . ' DESC';
         
         $statement = $db->prepare($query);
@@ -31,12 +31,12 @@
             $orderby = 'V.price';
         }
         
-        $query = 'SELECT V.ID, V.year, M.Make, V.model, V.price, T.Type, C.Class 
+        $query = 'SELECT V.vehicleID, V.year, M.makeName, V.model, V.price, T.typeName, C.className
         FROM vehicles V 
-        LEFT JOIN makes M ON V.make_id = M.ID 
-        LEFT JOIN classes C ON V.class_id = C.ID 
-        LEFT JOIN types T ON V.type_id = T.ID  
-        WHERE V.type_id = :type_id 
+        LEFT JOIN makes M ON V.makeID = M.makeID 
+        LEFT JOIN classes C ON V.classID = C.classID 
+        LEFT JOIN types T ON V.typeID = T.typeID 
+        WHERE V.typeID = :type_id 
         ORDER BY ' . $orderby . ' DESC';
         
         $statement = $db->prepare($query);
@@ -55,12 +55,12 @@
             $orderby = 'V.price';
         }
         
-        $query = 'SELECT V.ID, V.year, M.Make, V.model, V.price, T.Type, C.Class 
+        $query = 'SELECT V.vehicleID, V.year, M.makeName, V.model, V.price, T.typeName, C.className
         FROM vehicles V 
-        LEFT JOIN makes M ON V.make_id = M.ID 
-        LEFT JOIN classes C ON V.class_id = C.ID 
-        LEFT JOIN types T ON V.type_id = T.ID  
-        WHERE V.make_id = :make_id 
+        LEFT JOIN makes M ON V.makeID = M.makeID 
+        LEFT JOIN classes C ON V.classID = C.classID 
+        LEFT JOIN types T ON V.typeID = T.typeID  
+        WHERE V.makeID = :make_id 
         ORDER BY ' . $orderby . ' DESC';
         
         $statement = $db->prepare($query);
@@ -78,11 +78,11 @@
         } else {
             $orderby = 'V.price';
         }
-        $query = 'SELECT V.ID, V.year, M.Make, V.model, V.price, T.Type, C.Class 
+        $query = 'SELECT V.vehicleID, V.year, M.makeName, V.model, V.price, T.typeName, C.className
             FROM vehicles V 
-            LEFT JOIN makes M ON V.make_id = M.ID 
-            LEFT JOIN classes C ON V.class_id = C.ID 
-            LEFT JOIN types T ON V.type_id = T.ID  
+            LEFT JOIN makes M ON V.makeID = M.makeID 
+            LEFT JOIN classes C ON V.classID = C.classID 
+            LEFT JOIN types T ON V.typeID = T.typeID  
             ORDER BY ' . $orderby . ' DESC';
         $statement = $db->prepare($query);
         $statement->execute();
@@ -93,7 +93,7 @@
 
     function delete_vehicle($vehicle_id) {
         global $db;
-        $query = 'DELETE FROM vehicles WHERE ID = :vehicle_id';
+        $query = 'DELETE FROM vehicles WHERE vehicleID = :vehicle_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':vehicle_id', $vehicle_id);
         $statement->execute();
@@ -102,7 +102,7 @@
 
     function add_vehicle($make_id, $type_id, $class_id, $year, $model, $price) {
         global $db;
-        $query = 'INSERT INTO vehicles (year, make_id, model, price, type_id, class_id)
+        $query = 'INSERT INTO vehicles (year, makeID, model, price, typeID, classID)
               VALUES
                  (:year, :make_id, :model, :price, :type_id, :class_id)';
         $statement = $db->prepare($query);

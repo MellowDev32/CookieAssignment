@@ -13,11 +13,11 @@
                 </tr>
                 <?php foreach ($makes as $make) : ?>
                 <tr>
-                    <td><?= $make['Make']; ?></td>
+                    <td><?= $make['makeName']; ?></td>
                     <td>
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_make">
-                            <input type="hidden" name="make_id" value="<?= $make['ID']; ?>" />
+                            <input type="hidden" name="make_id" value="<?= $make['makeID']; ?>" />
                             <input type="submit" value="Remove" class="button red button-slim" />
                         </form>
                     </td>

@@ -7,12 +7,12 @@
             <select name="make_id">
                 <option value="0">View All Makes</option>
                 <?php foreach ($makes as $make) : ?>
-                <?php if ($make['ID'] == $make_id) { ?>
-                <option value="<?= $make['ID']; ?>" selected>
+                <?php if ($make['makeID'] == $make_id) { ?>
+                <option value="<?= $make['makeID']; ?>" selected>
                     <?php } else { ?>
-                <option value="<?= $make['ID']; ?>">
+                <option value="<?= $make['makeID']; ?>">
                     <?php } ?>
-                    <?= $make['Make']; ?>
+                    <?= $make['makeName']; ?>
                 </option>
                 <?php endforeach; ?>
             </select>
@@ -23,12 +23,12 @@
             <select name="type_id">
                 <option value="0">View All Types</option>
                 <?php foreach ($types as $type) : ?>
-                <?php if ($type['ID'] == $type_id) { ?>
-                <option value="<?= $type['ID']; ?>" selected>
+                <?php if ($type['typeID'] == $type_id) { ?>
+                <option value="<?= $type['typeID']; ?>" selected>
                     <?php } else { ?>
-                <option value="<?= $type['ID']; ?>">
+                <option value="<?= $type['typeID']; ?>">
                     <?php } ?>
-                    <?= $type['Type']; ?>
+                    <?= $type['typeName']; ?>
                 </option>
                 <?php endforeach; ?>
             </select>
@@ -39,12 +39,12 @@
             <select name="class_id">
                 <option value="0">View All Classes</option>
                 <?php foreach ($classes as $class) : ?>
-                <?php if ($class['ID'] == $class_id) { ?>
-                <option value="<?= $class['ID']; ?>" selected>
+                <?php if ($class['classID'] == $class_id) { ?>
+                <option value="<?= $class['classID']; ?>" selected>
                     <?php } else { ?>
-                <option value="<?= $class['ID']; ?>">
+                <option value="<?= $class['classID']; ?>">
                     <?php } ?>
-                    <?= $class['Class']; ?>
+                    <?= $class['className']; ?>
                 </option>
                 <?php endforeach; ?>
             </select>
@@ -83,19 +83,19 @@
                 <?php foreach ($vehicles as $vehicle) : ?>
                 <tr>
                     <td><?= $vehicle['year']; ?></td>
-                    <?php if ($vehicle['Make']) { ?>
-                    <td><?= $vehicle['Make']; ?></td>
+                    <?php if ($vehicle['makeName']) { ?>
+                    <td><?= $vehicle['makeName']; ?></td>
                     <?php } else { ?>
                     <td>None</td>
                     <?php } ?>
                     <td><?= $vehicle['model']; ?></td>
-                    <?php if ($vehicle['Type']) { ?>
-                    <td><?= $vehicle['Type']; ?></td>
+                    <?php if ($vehicle['typeName']) { ?>
+                    <td><?= $vehicle['typeName']; ?></td>
                     <?php } else { ?>
                     <td>None</td>
                     <?php } ?>
-                    <?php if ($vehicle['Class']) { ?>
-                    <td><?= $vehicle['Class']; ?></td>
+                    <?php if ($vehicle['className']) { ?>
+                    <td><?= $vehicle['className']; ?></td>
                     <?php } else { ?>
                     <td>None</td>
                     <?php } ?>

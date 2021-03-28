@@ -16,7 +16,7 @@
     $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
     $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
     $sort = filter_input(INPUT_GET, 'sort', FILTER_SANITIZE_STRING);
-    if (!$sort) $sort = 'price';
+    if (!$sort) {$sort = 'price';}
 
     // Get Data for View
     /* if ($make_id) {
@@ -37,19 +37,19 @@
     if ($make_id) {
         $make_name = get_make_name($make_id);
         $vehicles = array_filter($vehicles, function($array) use ($make_name) {
-            return $array["Make"] === $make_name;
+            return $array["makeName"] === $make_name;
         });
     }
     if ($type_id) {
         $type_name = get_type_name($type_id);
         $vehicles = array_filter($vehicles, function($array) use ($type_name) {
-            return $array["Type"] === $type_name;
+            return $array["typeName"] === $type_name;
         });
     }
     if ($class_id) {
         $class_name = get_class_name($class_id);
         $vehicles = array_filter($vehicles, function($array) use ($class_name) {
-            return $array["Class"] === $class_name;
+            return $array["className"] === $class_name;
         });
     }
 
