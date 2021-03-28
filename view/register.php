@@ -7,8 +7,7 @@
     <input type="submit" class="button blue">
 </form>
 <?php } else { ?>
-<h3>Thank You For Registering <?php echo'$firstname'; ?>!</h3>
+<h3>Thank You For Registering <?php echo '$firstname'; ?>!</h3>
 <p>Click link below to view Vehicle List</p>
-<?php $_SESSION['userid'] = $firstname; ?>
 <p><a href=".?action=list_vehicles">View Vehicles</a></p>
 <?php } ?>
