@@ -76,6 +76,9 @@
             break;
         case 'register':
             include('view/register.php');
+            if($firstname){
+                $_SESSION['userid'] = $firstname;
+            }
             break;
         case 'logout':
             include('view/logout.php');
