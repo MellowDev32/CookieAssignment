@@ -75,10 +75,10 @@
             include('view/vehicle_list.php');
             break;
         case 'register':
-            include('view/register.php');
             if($firstname){
                 $_SESSION['userid'] = $firstname;
             }
+            include('view/register.php');            
             break;
         case 'logout':
             include('view/logout.php');
