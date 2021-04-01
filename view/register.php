@@ -10,6 +10,6 @@
 <?php } else { ?>
 <h3>Thank You For Registering <?= $firstname; ?></h3>
 <p>Click link below to view Vehicle List</p>
-<p><a href=".?action=list_vehicles">View Vehicles</a></p>
+<p><a href=".">View Vehicles</a></p>
 <?php } ?>
 <?php include('footer.php') ?>
