@@ -10,7 +10,7 @@
 
 <body>
     <main>
-        <?php if($action != 'register' && !isset($_SESSION['uerid'])) { ?>
+        <?php if($action != 'register' && !isset($_SESSION['userid'])) { ?>
             <a href=".?action=register">Register</a>
         <?php } else if($action != 'register' && $action != 'logout' && isset($_SESSION['userid'])) { $fname = $_SESSION['userid'];?>
             <p>Hello <?php echo '$fname'; ?>(<a href=".?action=logout">logout</a>) </p>
