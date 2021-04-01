@@ -1,3 +1,4 @@
+<?php include('header.php') ?>
 <?php $fname = $_SESSION['uerid']; ?>
 <h3>Thank you for signing out, <?php echo '$fname' ?></h3>
 <?php 
@@ -14,3 +15,4 @@
     setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
 ?>
 <p><a href=".?action=list_vehicles">View Vehicles</a></p>
+<?php include('footer.php') ?>

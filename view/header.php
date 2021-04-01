@@ -12,8 +12,8 @@
     <main>
         <?php if($action != 'register' && !isset($_SESSION['userid'])) { ?>
             <a href=".?action=register">Register</a>
-        <?php } else if($action != 'register' && $action != 'logout' && isset($_SESSION['userid'])) { $fname = $_SESSION['userid'];?>
-            <p>Hello <?php echo '$fname'; ?>(<a href=".?action=logout">logout</a>) </p>
+        <?php } else if($action != 'register' && $action != 'logout' && isset($_SESSION['userid'])) { ?>
+            <p>Hello <?php echo $_SESSION['userid']; ?>(<a href=".?action=logout">logout</a>) </p>
         <?php } ?>
         <header>
             <h1>Zippy Used Autos</h1>
