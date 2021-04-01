@@ -28,20 +28,6 @@
         $_SESSION['userid'] = $firstname;
     }
 
-    // Get Data for View
-    /* if ($make_id) {
-        $make_name = get_make_name($make_id);
-        $vehicles = get_vehicles_by_make($make_id, $sort);
-    } else if ($type_id) {
-        $type_name = get_type_name($type_id);
-        $vehicles = get_vehicles_by_type($type_id, $sort);
-    } else if ($class_id) {
-        $class_name = get_class_name($class_id);
-        $vehicles = get_vehicles_by_class($class_id, $sort);
-    } else {
-        $vehicles = get_all_vehicles($sort);
-    } */
-    
     $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if (!$action) {
         $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -75,9 +61,6 @@
             include('view/vehicle_list.php');
             break;
         case 'register':
-            if($firstname){
-                $_SESSION['userid'] = $firstname;
-            }
             include('view/register.php');            
             break;
         case 'logout':
