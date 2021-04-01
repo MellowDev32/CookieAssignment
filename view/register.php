@@ -5,7 +5,7 @@
     <input type="hidden" name="action" value="register">
     <label>First Name:</label>
     <input type="text" name="firstname" required>
-    <input type="submit" class="button blue">
+    <input type="submit" class="button blue" style="margin: 10px 0px;">
 </form>
 <?php } else { ?>
 <h3>Thank You For Registering <?= $firstname; ?></h3>

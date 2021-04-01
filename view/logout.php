@@ -1,6 +1,5 @@
 <?php include('header.php') ?>
-<?php $fname = $_SESSION['uerid']; ?>
-<h3>Thank you for signing out, <?php echo '$fname' ?></h3>
+<h3>Thank you for signing out, <?php echo $_SESSION['userid']; ?></h3>
 <?php 
     unset($_SESSION['uerid']);
     session_destroy();
@@ -14,5 +13,5 @@
     $httponly = $params['httponly'];
     setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
 ?>
-<p><a href=".?action=list_vehicles">View Vehicles</a></p>
+<p><a href=".">View Vehicles</a></p>
 <?php include('footer.php') ?>
